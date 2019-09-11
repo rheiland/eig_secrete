@@ -141,6 +141,12 @@ void create_cell_types( void )
 	cell_defaults.phenotype.mechanics.cell_cell_adhesion_strength = 0.0; 
 	cell_defaults.phenotype.mechanics.cell_cell_repulsion_strength = 0.0; 
 
+	// Glucose Secretion
+	int glucose_substrate_index = microenvironment.find_density_index( "glucose" );
+	cell_defaults.phenotype.secretion.uptake_rates[glucose_substrate_index] =0.0; 
+	cell_defaults.phenotype.secretion.secretion_rates[glucose_substrate_index] = 0.1; 
+	cell_defaults.phenotype.secretion.saturation_densities[glucose_substrate_index] = 100.0; 
+	
 	return; 
 }
 
